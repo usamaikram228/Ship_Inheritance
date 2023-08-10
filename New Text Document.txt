@@ -1,0 +1,51 @@
+const int Cruise_Ship = 1,
+			Cargo_Ship = 2;
+		int choice;
+		cout << "Enter the choice he wanted to create ship : ";
+		cin >> choice;
+
+		CargoShip* ptr = nullptr;
+		CruiseShip* ptr2 = nullptr;
+
+ 		switch (choice)
+		{
+		case Cargo_Ship:
+			 ptr = new CargoShip;
+			char cargoName[20];
+			char cargoYear[20];
+			int p, c;
+			cin.ignore();
+			cout << "Enter the name of Cargo Ship : ";
+			cin.getline(cargoName, 20);
+			cout << "Enter the year : ";
+			cin.getline(cargoYear, 20);
+
+			ptr->setShip(cargoName, cargoYear);
+			
+			cout << "Enter the number of maximum passengers : ";
+			cin >> p;
+			ptr->setCruiseShip(p);
+
+			cout << "Enter the capacity of cargo : ";
+			cin >> c;
+			ptr->setCargo(c);
+			break;
+		case Cruise_Ship:
+			 ptr2 = new CruiseShip;
+			char cruiseName[20];
+			char cruiseYear[20];
+			int p;
+			cin.ignore();
+			cout << "Enter the name of Cargo Ship : ";
+			cin.getline(cruiseName, 20);
+			cout << "Enter the year : ";
+			cin.getline(cruiseYear, 20);
+
+			ptr2->setShip(cruiseName, cruiseYear);
+
+			cout << "Enter the number of maximum passengers : ";
+			cin >> p;
+			ptr2->setCruiseShip(p);
+			break;
+
+		}
